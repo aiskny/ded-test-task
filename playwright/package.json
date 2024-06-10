@@ -1,0 +1,22 @@
+{
+  "name": "playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:staging": "cross-env BASE_URL=https://staging.ded1.co npx playwright test",
+    "test:staging:firefox": "cross-env BASE_URL=https://staging.ded1.co HEADLESS=true npx playwright test --project=firefox",
+    "test:staging:headless": "cross-env HEADLESS=true BASE_URL=https://staging.ded1.co  npx playwright test",
+    "test:prod": "cross-env BASE_URL=https://ded1.co npx playwright test",
+    "test:headed": "cross-env BASE_URL=https://staging.ded1.co npx playwright test --headed",
+    "test:debug": "cross-env BASE_URL=https://staging.ded1.co npx playwright test --debug"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.44.1",
+    "@types/node": "^20.12.12",
+    "cross-env": "^7.0.3"
+  }
+}
