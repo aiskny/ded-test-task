@@ -102,7 +102,35 @@ At the GUI
 
 Beginning in the directory `playwright`:
 
----
+Install dependencies:
 
-Candidates are expected to complete this section of the documentation, in the style of the Cypress section above.
+```
+npm i
+```
 
+# Running Tests
+If you run the tests , run this command ```npm run test``` (see `package.json` scripts). Please beware it runs tests on the default url that is ```https://staging.ded1.co```.
+
+Run all tests on staging server/production server
+- Staging: ```npm run test:staging```
+- Prod: ```npm run test:prod```
+
+Run a specific test on staging server server, eg. `university-search`:
+
+```
+npm run test:staging uni-search.spec.js'
+```
+
+Run all tests on staging server on headless mode: Send an env variable named HEADLESS with your command, like:
+
+```
+cross-env HEADLESS=true npm run test
+cross-env HEADLESS=true npm run test:prod
+```
+
+Run tests on a different browser: Please be aware that only 3 browsers have been set. So you can only run on them (see playwright.config.js file). So specify one of them by the command like:
+``` npx playwright test --project=firefox```
+
+Test Report: to see the test report follow the text prompted by playwright
+
+```Serving HTML report at http://localhost:9323```
